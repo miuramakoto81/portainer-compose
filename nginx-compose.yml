@@ -7,5 +7,6 @@ services:
     ports:
       - 80:80
       - 443:443
+    network_mode: host
     volumes:
       - /project/nginx/my-nginx.conf:/host/path/nginx.conf:ro
