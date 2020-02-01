@@ -1,0 +1,13 @@
+version: '3'
+
+services:
+  nginx:
+    image: nginx:1.17.8
+    container_name: mynginx
+    restart: always
+    ports:
+      - "80:80"
+      - "443:443"
+    command: -H unix:///var/run/docker.sock
+    volumes:
+      - /project/nginx/my-nginx.conf:/host/path/nginx.conf:ro
