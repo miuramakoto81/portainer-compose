@@ -1,13 +1,12 @@
-version: '3.2'
+version: '2'
 services:
   nginx:
     image: nginx:1.17.8
     container_name: mynginx
     restart: always
     ports:
-      - 80:80
-      - 443:443
-    protocol: tcp
-    mode: host
+    - 80:80
+    - 443:443
+    network_mode: host
     volumes:
-      - /project/nginx/my-nginx.conf:/host/path/nginx.conf:ro
+    - /project/nginx/my-nginx.conf:/host/path/nginx.conf:ro
